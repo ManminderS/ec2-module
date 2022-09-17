@@ -1,7 +1,7 @@
-output "instance_ip" {
-  value = module.ec2_instance.public_ip
+output "public_ip" {
+    value = aws_instance.app_server[*].public_ip
 }
 
-output "instance_tags" {
-  value = module.ec2_instance.ec2_tags
+output "ec2_tags" {
+  value = aws_instance.app_server[*].tags_all.Name
 }

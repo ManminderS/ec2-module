@@ -1,4 +1,8 @@
+resource "aws_instance" "app_server" {
+  ami           = var.ami_id
+  instance_type = var.instance
 
-module "ec2_instance" {
-  source = "./ec2-module"
+  tags = {
+    Name = "AppServer"
+  }
 }
